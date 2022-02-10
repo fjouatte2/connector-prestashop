@@ -4,7 +4,7 @@
 from odoo.addons.component.core import AbstractComponent
 
 from odoo import exceptions, _
-from odoo.addons.connector.exception import NetworkRetryableError
+from odoo.addons.connector.models.exception import NetworkRetryableError
 
 from contextlib import contextmanager
 from requests.exceptions import HTTPError, RequestException, ConnectionError

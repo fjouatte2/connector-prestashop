@@ -3,7 +3,7 @@
 
 from odoo import _
 
-from odoo.addons.connector.exception import MappingError
+from odoo.addons.connector.models.exception import MappingError
 from odoo.addons.connector.components.mapper import (
     mapping,
     only_create,

@@ -3,7 +3,7 @@
 
 from odoo import models, fields, api
 from odoo.addons.queue_job.job import job, related_action
-from odoo.addons.connector.exception import RetryableJobError
+from odoo.addons.connector.models.exception import RetryableJobError
 
 
 class PrestashopBinding(models.AbstractModel):

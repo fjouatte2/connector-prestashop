@@ -10,7 +10,7 @@ import psycopg2
 from odoo import _, exceptions
 from odoo.addons.component.core import AbstractComponent
 
-from odoo.addons.connector.exception import RetryableJobError
+from odoo.addons.connector.models.exception import RetryableJobError
 
 
 _logger = logging.getLogger(__name__)
