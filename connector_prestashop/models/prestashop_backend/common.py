@@ -45,6 +45,7 @@ class PrestashopBackend(models.Model):
                 ('checked', 'Checked'),
                 ('production', 'In Production')]
 
+    name = fields.Char(string='Name', required=True)
     version = fields.Selection(
         selection='select_versions',
         string='Version',
