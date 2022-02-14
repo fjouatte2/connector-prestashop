@@ -98,7 +98,7 @@
                             </p>
                             <group>
                                 <div>
-                                    <label string="Import customer groups and customers since"
+                                    <label for="import_partners_since" string="Import customer groups and customers since"
                                         class="oe_inline" />
                                     <field name="import_partners_since" class="oe_inline"
                                         nolabel="1" />
@@ -108,7 +108,7 @@
                             </group>
                             <group>
                                 <div>
-                                    <label string="Import product categories and products"
+                                    <label for="import_products_since" string="Import product categories and products"
                                         class="oe_inline" />
                                     <field name="import_products_since" class="oe_inline"
                                         nolabel="1" />
@@ -118,14 +118,14 @@
                             </group>
                             <group>
                                 <div>
-                                    <label string="Import payment modes" class="oe_inline" />
+                                    <label for="import_payment_modes" string="Import payment modes" class="oe_inline" />
                                 </div>
                                 <button name="import_payment_modes" type="object" class="oe_highlight"
                                     string="Import in background" />
                             </group>
                             <group>
                                 <div>
-                                    <label string="Import sale orders since" class="oe_inline" />
+                                    <label for="import_orders_since" string="Import sale orders since" class="oe_inline" />
                                     <field name="import_orders_since" class="oe_inline"
                                         nolabel="1" />
                                 </div>
@@ -134,7 +134,7 @@
                             </group>
                             <group>
                                 <div>
-                                    <label string="Import refunds" class="oe_inline" />
+                                    <label for="import_refunds_since" string="Import refunds" class="oe_inline" />
                                     <field name="import_refunds_since" class="oe_inline"
                                         nolabel="1" />
                                 </div>
@@ -143,7 +143,7 @@
                             </group>
                             <group>
                                 <div>
-                                    <label string="Import suppliers" class="oe_inline" />
+                                    <label for="import_suppliers_since" string="Import suppliers" class="oe_inline" />
                                     <field name="import_suppliers_since" class="oe_inline"
                                         nolabel="1" />
                                 </div>
@@ -151,19 +151,19 @@
                                     string="Import in background" />
                             </group>
                             <group>
-                                <label string="Import carriers" class="oe_inline" />
+                                <label for="import_carriers" string="Import carriers" class="oe_inline" />
                                 <div>
                                     <button name="import_carriers" type="object" class="oe_highlight"
                                         string="Import in background" />
                                 </div>
                             </group>
                             <group>
-                                <label string="Export stock quantities" class="oe_inline" />
+                                <label for="update_product_stock_qty" string="Export stock quantities" class="oe_inline" />
                                 <button name="update_product_stock_qty" type="object"
                                     class="oe_highlight" string="Export in background" />
                             </group>
                             <group>
-                                <label string="Import stock quantities" class="oe_inline" />
+                                <label for="import_stock_qty" string="Import stock quantities" class="oe_inline" />
                                 <button name="import_stock_qty" type="object" class="oe_highlight"
                                     string="Import in background" />
                             </group>
@@ -219,7 +219,6 @@
     <record id="action_prestashop_backend" model="ir.actions.act_window">
         <field name="name">PrestaShop Backends</field>
         <field name="res_model">prestashop.backend</field>
-        <field name="view_type">form</field>
         <field name="view_mode">tree,form</field>
     </record>
 
@@ -253,7 +252,6 @@
     <record id="action_prestashop_shop_group" model="ir.actions.act_window">
         <field name="name">PrestaShop Shop Groups</field>
         <field name="res_model">prestashop.shop.group</field>
-        <field name="view_type">form</field>
         <field name="view_mode">tree,form</field>
     </record>
 
@@ -294,7 +292,6 @@
     <record id="action_prestashop_shop" model="ir.actions.act_window">
         <field name="name">PrestaShop Shops</field>
         <field name="res_model">prestashop.shop</field>
-        <field name="view_type">form</field>
         <field name="view_mode">tree,form</field>
     </record>
 
