@@ -11,7 +11,6 @@
         <field name="doall" eval="False"/>
         <field name="model_id" ref="model_prestashop_backend"/>
         <field name="code">model._scheduler_import_sale_orders()</field>
-        <field name="args" eval="'()'"/>
     </record>
 
     <record forcecreate="True" id="ir_cron_update_product_stock_qty" model="ir.cron">
@@ -24,7 +23,6 @@
         <field name="doall" eval="False"/>
         <field name="model_id" ref="model_prestashop_backend"/>
         <field name="code">model._scheduler_update_product_stock_qty()</field>
-        <field name="args" eval="'()'"/>
     </record>
 
     <record forcecreate="True" id="ir_cron_import_customers" model="ir.cron">
@@ -37,7 +35,6 @@
         <field name="doall" eval="False"/>
         <field name="model_id" ref="model_prestashop_backend"/>
         <field name="code">model._scheduler_import_customers()</field>
-        <field name="args" eval="'()'"/>
     </record>
 
     <record forcecreate="True" id="ir_cron_import_products" model="ir.cron">
@@ -50,7 +47,6 @@
         <field name="doall" eval="False"/>
         <field name="model_id" ref="model_prestashop_backend"/>
         <field name="code">model._scheduler_import_products()</field>
-        <field name="args" eval="'()'"/>
     </record>
 
     <record forcecreate="True" id="ir_cron_import_suppliers" model="ir.cron">
@@ -63,7 +59,6 @@
         <field name="doall" eval="False"/>
         <field name="model_id" ref="model_prestashop_backend"/>
         <field name="code">model._scheduler_import_suppliers()</field>
-        <field name="args" eval="'()'"/>
     </record>
 
     <record forcecreate="True" id="ir_cron_import_carriers" model="ir.cron">
@@ -76,7 +71,6 @@
         <field name="doall" eval="False"/>
         <field name="model_id" ref="model_prestashop_backend"/>
         <field name="code">model._scheduler_import_carriers()</field>
-        <field name="args" eval="'()'"/>
     </record>
 
     <record forcecreate="True" id="ir_cron_import_payment_modes" model="ir.cron">
@@ -89,7 +83,6 @@
         <field name="doall" eval="False"/>
         <field name="model_id" ref="model_prestashop_backend"/>
         <field name="code">model._scheduler_import_payment_modes()</field>
-        <field name="args" eval="'()'"/>
     </record>
 
 </odoo>
