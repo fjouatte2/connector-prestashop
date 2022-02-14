@@ -93,6 +93,8 @@ class PrestaShopLocation(object):
     def __init__(self, location, webservice_key):
         self.location = location
         self.webservice_key = webservice_key
+        import pdb
+        pdb.set_trace()
         if not location.endswith('/api'):
             location = location + '/api'
         if not location.startswith('http'):
