@@ -7,7 +7,8 @@ from odoo.addons.component.core import Component
 
 
 class AccountInvoice(models.Model):
-    _inherit = 'account.invoice'
+
+    _inherit = 'sale.order'
 
     prestashop_bind_ids = fields.One2many(
         comodel_name='prestashop.refund',
@@ -66,10 +67,10 @@ class AccountInvoice(models.Model):
 class PrestashopRefund(models.Model):
     _name = 'prestashop.refund'
     _inherit = 'prestashop.binding.odoo'
-    _inherits = {'account.invoice': 'odoo_id'}
+    _inherits = {'account.move': 'odoo_id'}
 
     odoo_id = fields.Many2one(
-        comodel_name='account.invoice',
+        comodel_name='account.move',
         required=True,
         ondelete='cascade',
         string='Invoice',
