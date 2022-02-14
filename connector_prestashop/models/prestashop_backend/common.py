@@ -8,7 +8,7 @@ from odoo import models, fields, api, exceptions, _
 
 from ...components.backend_adapter import api_handle_errors
 # from odoo.addons.connector.checkpoint import checkpoint
-from odoo.addons.base.res.res_partner import _tz_get
+from odoo.addons.base.models.res_partner import _tz_get
 
 _logger = logging.getLogger(__name__)
 
