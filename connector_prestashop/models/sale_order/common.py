@@ -83,7 +83,6 @@ class PrestashopSaleOrder(models.Model):
 
     @job(default_channel='root.prestashop')
     @related_action(action='related_action_unwrap_binding')
-    @api.multi
     def export_tracking_number(self):
         """ Export the tracking number of a delivery order. """
         self.ensure_one()
@@ -91,7 +90,6 @@ class PrestashopSaleOrder(models.Model):
             exporter = work.component(usage='tracking.exporter')
             return exporter.run(self)
 
-    @api.multi
     def find_prestashop_state(self):
         self.ensure_one()
         state_list_model = self.env['sale.order.state.list']
@@ -105,7 +103,6 @@ class PrestashopSaleOrder(models.Model):
 
     @job(default_channel='root.prestashop')
     @related_action(action='related_action_unwrap_binding')
-    @api.multi
     def export_sale_state(self):
         for sale in self:
             new_state = sale.find_prestashop_state()

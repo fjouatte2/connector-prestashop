@@ -33,7 +33,6 @@ class PrestashopProductImage(models.Model):
     )
 
     @job(default_channel='root.prestashop')
-    @api.multi
     def import_product_image(self, backend, product_tmpl_id, image_id,
                              **kwargs):
         """Import a product image"""
