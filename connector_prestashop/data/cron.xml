@@ -9,7 +9,7 @@
         <field name="interval_type">days</field>
         <field name="numbercall">-1</field>
         <field name="doall" eval="False"/>
-        <field name="model" eval="'prestashop.backend'"/>
+        <field name="model_id" ref="model_prestashop_backend"/>
         <field name="function" eval="'_scheduler_import_sale_orders'"/>
         <field name="args" eval="'()'"/>
     </record>
@@ -22,7 +22,7 @@
         <field name="interval_type">days</field>
         <field name="numbercall">-1</field>
         <field name="doall" eval="False"/>
-        <field name="model" eval="'prestashop.backend'"/>
+        <field name="model_id" ref="model_prestashop_backend"/>
         <field name="function" eval="'_scheduler_update_product_stock_qty'"/>
         <field name="args" eval="'()'"/>
     </record>
@@ -35,7 +35,7 @@
         <field name="interval_type">days</field>
         <field name="numbercall">-1</field>
         <field name="doall" eval="False"/>
-        <field name="model" eval="'prestashop.backend'"/>
+        <field name="model_id" ref="model_prestashop_backend"/>
         <field name="function" eval="'_scheduler_import_customers'"/>
         <field name="args" eval="'()'"/>
     </record>
@@ -48,7 +48,7 @@
         <field name="interval_type">days</field>
         <field name="numbercall">-1</field>
         <field name="doall" eval="False"/>
-        <field name="model" eval="'prestashop.backend'"/>
+        <field name="model_id" ref="model_prestashop_backend"/>
         <field name="function" eval="'_scheduler_import_products'"/>
         <field name="args" eval="'()'"/>
     </record>
@@ -61,7 +61,7 @@
         <field name="interval_type">days</field>
         <field name="numbercall">-1</field>
         <field name="doall" eval="False"/>
-        <field name="model" eval="'prestashop.backend'"/>
+        <field name="model_id" ref="model_prestashop_backend"/>
         <field name="function" eval="'_scheduler_import_suppliers'"/>
         <field name="args" eval="'()'"/>
     </record>
@@ -74,7 +74,7 @@
         <field name="interval_type">days</field>
         <field name="numbercall">-1</field>
         <field name="doall" eval="False"/>
-        <field name="model" eval="'prestashop.backend'"/>
+        <field name="model_id" ref="model_prestashop_backend"/>
         <field name="function" eval="'_scheduler_import_carriers'"/>
         <field name="args" eval="'()'"/>
     </record>
@@ -87,7 +87,7 @@
         <field name="interval_type">days</field>
         <field name="numbercall">-1</field>
         <field name="doall" eval="False"/>
-        <field name="model" eval="'prestashop.backend'"/>
+        <field name="model_id" ref="model_prestashop_backend"/>
         <field name="function" eval="'_scheduler_import_payment_modes'"/>
         <field name="args" eval="'()'"/>
     </record>
