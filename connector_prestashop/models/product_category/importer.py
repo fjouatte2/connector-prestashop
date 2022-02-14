@@ -104,10 +104,10 @@ class ProductCategoryImporter(Component):
                     values = self._split_per_language(
                         record, fields=['name', ])
                     name = values[self._default_language]['name']
-
+                """
                 self.backend_record.add_checkpoint(
                     category, message=msg % (name, str(e)))
-
+                """
 
 class ProductCategoryBatchImporter(Component):
     _name = 'prestashop.product.category.delayed.batch.importer'

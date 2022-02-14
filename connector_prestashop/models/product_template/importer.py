@@ -522,15 +522,18 @@ class ProductTemplateImporter(Component):
         self.import_combinations()
         self.attribute_line(binding)
         self.deactivate_default_product(binding)
-        self.checkpoint_default_category_missing(binding)
+        # self.checkpoint_default_category_missing(binding)
 
     def checkpoint_default_category_missing(self, binding):
         if self.default_category_error:
             msg = _('The default category could not be imported.')
+            """
             self.backend_record.add_checkpoint(
                 binding,
                 message=msg,
             )
+            """
+            pass
 
     def deactivate_default_product(self, binding):
         if binding.product_variant_count != 1:

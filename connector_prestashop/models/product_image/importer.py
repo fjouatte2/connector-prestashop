@@ -86,13 +86,15 @@ class ProductImageImporter(Component):
                     'Import of image id `%s` failed. '
                     'Error: `%s`'
                 ) % (image_id, error.msg)
+                """
                 self.backend_record.add_checkpoint(
                     template,
                     message=msg)
+                """
             else:
                 msg = _(
                     'Import of image id `%s` of PrestaShop product '
                     'with id `%s` failed. '
                     'Error: `%s`'
                 ) % (image_id, template_id, error.msg)
-                self.backend_record.add_checkpoint()
+                # self.backend_record.add_checkpoint()

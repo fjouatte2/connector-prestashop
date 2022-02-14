@@ -30,11 +30,14 @@ class RefundImporter(Component):
         if invoice.amount_total == float(self.prestashop_record['amount']):
             invoice.signal_workflow('invoice_open')
         else:
+            pass
+            """
             self.backend_record.add_checkpoint(
                 invoice,
                 message=_('The refund for order %s has a different amount '
                           'in PrestaShop and in Odoo.') % invoice.origin
             )
+            """
 
     def _after_import(self, binding):
         super(RefundImporter, self)._after_import(binding)
