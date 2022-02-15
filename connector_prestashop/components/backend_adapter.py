@@ -116,16 +116,14 @@ class PrestaShopCRUDAdapter(AbstractComponent):
         :param environment: current environment (backend, session, ...)
         :type environment: :py:class:`connector.connector.ConnectorEnvironment`
         """
-        import pdb
-        pdb.set_trace()
         super(PrestaShopCRUDAdapter, self).__init__(environment)
         self.prestashop = PrestaShopLocation(
-            self.backend_record.location.encode(),
+            self.backend_record.location,
             self.backend_record.webservice_key
         )
         self.client = PrestaShopWebServiceDict(
-            str(self.prestashop.api_url),
-            str(self.prestashop.webservice_key),
+            self.prestashop.api_url,
+            self.prestashop.webservice_key,
             debug=self.backend_record.debug,
             verbose=self.backend_record.verbose
         )
