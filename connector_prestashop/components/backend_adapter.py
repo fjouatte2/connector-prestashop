@@ -47,7 +47,7 @@ def api_handle_errors(message=''):
     except PrestaShopWebServiceError as err:
         raise exceptions.UserError(
             _(u'{}Error during synchronization with '
-                'PrestaShop:\n\n{}').format(message, unicode(err))
+                'PrestaShop:\n\n{}').format(message, err)
         )
 
 
@@ -185,7 +185,7 @@ class GenericAdapter(AbstractComponent):
         """
         _logger.debug(
             'method search, model %s, filters %s',
-            self._prestashop_model, unicode(filters))
+            self._prestashop_model, filters)
         return self.client.search(self._prestashop_model, filters)
 
     def read(self, id, attributes=None):
@@ -195,7 +195,7 @@ class GenericAdapter(AbstractComponent):
         """
         _logger.debug(
             'method read, model %s id %s, attributes %s',
-            self._prestashop_model, str(id), unicode(attributes))
+            self._prestashop_model, str(id), attributes)
         res = self.client.get(self._prestashop_model, id, options=attributes)
         first_key = res.keys()[0]
         return res[first_key]
@@ -204,7 +204,7 @@ class GenericAdapter(AbstractComponent):
         """ Create a record on the external system """
         _logger.debug(
             'method create, model %s, attributes %s',
-            self._prestashop_model, unicode(attributes))
+            self._prestashop_model, attributes)
         res = self.client.add(self._prestashop_model, {
             self._export_node_name: attributes
         })
@@ -218,7 +218,7 @@ class GenericAdapter(AbstractComponent):
         _logger.debug(
             'method write, model %s, attributes %s',
             self._prestashop_model,
-            unicode(attributes)
+            attributes
         )
         res = self.client.edit(
             self._prestashop_model, {self._export_node_name: attributes})
@@ -228,7 +228,7 @@ class GenericAdapter(AbstractComponent):
 
     def delete(self, resource, ids):
         _logger.debug('method delete, model %s, ids %s',
-                      resource, unicode(ids))
+                      resource, ids)
         # Delete a record(s) on the external system
         return self.client.delete(resource, ids)
 
