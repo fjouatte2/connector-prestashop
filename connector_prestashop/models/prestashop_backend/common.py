@@ -247,6 +247,8 @@ class PrestashopBackend(models.Model):
         return True
 
     def _check_connection(self):
+        import pdb
+        pdb.set_trace()
         self.ensure_one()
         with self.work_on('prestashop.backend') as work:
             component = work.component_by_name(name='prestashop.adapter.test')
