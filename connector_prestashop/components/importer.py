@@ -442,6 +442,8 @@ class TranslatableRecordImporter(AbstractComponent):
             }
         """
         split_record = {}
+        import pdb
+        pdb.set_trace()
         languages = self.find_each_language(record)
         if not languages:
             raise FailedJobError(
