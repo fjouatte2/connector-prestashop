@@ -197,7 +197,7 @@ class GenericAdapter(AbstractComponent):
             'method read, model %s id %s, attributes %s',
             self._prestashop_model, str(id), attributes)
         res = self.client.get(self._prestashop_model, id, options=attributes)
-        first_key = res.keys()[0]
+        first_key = next(iter(res))
         return res[first_key]
 
     def create(self, attributes=None):
