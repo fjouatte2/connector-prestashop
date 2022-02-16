@@ -166,7 +166,7 @@ class PrestashopImporter(AbstractComponent):
         for instance to see if another transaction already made the work.
         """
         with odoo.api.Environment.manage():
-            registry = odoo.modules.registry.RegistryManager.get(
+            registry = odoo.modules.registry.Registry.get(
                 self.env.cr.dbname
             )
             with closing(registry.cursor()) as cr:
