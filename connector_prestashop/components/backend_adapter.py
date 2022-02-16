@@ -183,6 +183,8 @@ class GenericAdapter(AbstractComponent):
 
         :rtype: list
         """
+        import pdb
+        pdb.set_trace()
         _logger.debug(
             'method search, model %s, filters %s',
             self._prestashop_model, filters)
