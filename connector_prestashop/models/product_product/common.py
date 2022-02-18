@@ -155,7 +155,7 @@ class PrestashopProductCombination(models.Model):
         for product in self:
             backends[product.backend_id].add(product.id)
 
-        for backend, product_ids in backends.iteritems():
+        for backend, product_ids in iter(backends.items()):
             products = self.browse(product_ids)
             products._recompute_prestashop_qty_backend(backend)
         return True

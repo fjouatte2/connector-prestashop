@@ -451,7 +451,7 @@ class TranslatableRecordImporter(AbstractComponent):
                   'Run "Synchronize base data".')
             )
         model_name = self.model._name
-        for language_id, language_code in languages.iteritems():
+        for language_id, language_code in iter(languages.items()):
             split_record[language_code] = record.copy()
         _fields = self._translatable_fields[model_name]
         if fields:
@@ -510,7 +510,7 @@ class TranslatableRecordImporter(AbstractComponent):
 
     def _after_import(self, binding):
         """ Hook called at the end of the import """
-        for lang_code, lang_record in self.other_langs_data.iteritems():
+        for lang_code, lang_record in iter(self.other_langs_data.items()):
             map_record = self.mapper.map_record(lang_record)
             binding.with_context(
                 lang=lang_code,
