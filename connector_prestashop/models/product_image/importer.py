@@ -77,6 +77,8 @@ class ProductImageImporter(Component):
         self.image_id = image_id
 
         try:
+            import pdb
+            pdb.set_trace()
             super(ProductImageImporter, self).run(image_id, **kwargs)
         except PrestaShopWebServiceError as error:
             binder = self.binder_for('prestashop.product.template')
