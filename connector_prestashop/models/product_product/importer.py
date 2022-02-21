@@ -376,8 +376,6 @@ class ProductCombinationOptionValueMapper(Component):
     @only_create
     @mapping
     def odoo_id(self, record):
-        import pdb
-        pdb.set_trace()
         attribute_binder = self.binder_for(
             'prestashop.product.combination.option'
         )
