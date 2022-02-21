@@ -122,8 +122,6 @@ class PrestashopImporter(AbstractComponent):
         return {'connector_no_export': True}
 
     def _create_data(self, map_record):
-        import pdb
-        pdb.set_trace()
         return map_record.values(for_create=True)
 
     def _update_data(self, map_record):
@@ -444,8 +442,6 @@ class TranslatableRecordImporter(AbstractComponent):
             }
         """
         split_record = {}
-        import pdb
-        pdb.set_trace()
         languages = self.find_each_language(record)
         if not languages:
             raise FailedJobError(

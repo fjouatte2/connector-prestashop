@@ -553,15 +553,15 @@ class ProductTemplateImporter(Component):
         if products:
             attribute_ids = []
             for product in products:
-                for attribute_value in product.attribute_value_ids:
+                for attribute_value in product.product_template_attribute_value_ids:
                     attribute_ids.append(attribute_value.attribute_id.id)
                     # filter unique id for create relation
             for attribute_id in set(attribute_ids):
-                values = products.mapped('attribute_value_ids').filtered(
+                values = products.mapped('product_template_attribute_value_ids').filtered(
                     lambda x: (x.attribute_id.id == attribute_id and
                                x.id not in attr_line_value_ids))
                 if values:
-                    self.env['product.attribute.line'].create({
+                    self.env['product.template.attribute.line'].create({
                         'attribute_id': attribute_id,
                         'product_tmpl_id': template_id,
                         'value_ids': [(6, 0, values.ids)],

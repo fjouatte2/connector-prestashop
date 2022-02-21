@@ -40,9 +40,7 @@ class PrestashopShop(models.Model):
         comodel_name='stock.warehouse',
         string='WareHouse',
         required=True,
-        readonly=True,
         ondelete='cascade',
-        oldname='openerp_id',
     )
     backend_id = fields.Many2one(
         compute='_compute_backend_id',
