@@ -313,6 +313,8 @@ class ProductCombinationOptionMapper(Component):
     @mapping
     def odoo_id(self, record):
         name = self.name(record)
+        import pdb
+        pdb.set_trace()
         binding = self.env['product.attribute'].search(
             [('name', '=', name)],
             limit=1,
