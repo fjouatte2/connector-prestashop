@@ -610,8 +610,6 @@ class ProductTemplateImporter(Component):
 
     def import_images(self, binding):
         prestashop_record = self._get_prestashop_data()
-        import pdb
-        pdb.set_trace()
         associations = prestashop_record.get('associations', {})
         images = associations.get('images', {}).get(
             self.backend_record.get_version_ps_key('image'), {})

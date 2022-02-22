@@ -80,7 +80,6 @@ class ProductCombinationImporter(Component):
     def import_supplierinfo(self, binding):
         ps_id = self._get_prestashop_data()['id']
         filters = {
-            # 'filter[id_product]': ps_id,
             'filter[id_product_attribute]': ps_id
         }
         self.env['prestashop.product.supplierinfo'].with_delay().import_batch(
