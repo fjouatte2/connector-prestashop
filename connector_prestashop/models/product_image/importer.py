@@ -78,11 +78,26 @@ class ProductImageImporter(Component):
         self.template_id = template_id
         self.image_id = image_id
         try:
+            import pdb
+            pdb.set_trace()
             image_data = self._get_prestashop_data()
             image_content = image_data['content']
             presta_template = presta_product_template_model.search([('prestashop_id', '=', int(template_id))])
             if presta_template and presta_template.odoo_id:
-                presta_template.odoo_id.write({'image_1920': image_content})
+                if kwargs and kwargs.get('extra_image', False):
+                    values = {}
+                    values['product_template_image_ids'].append(
+                        (
+                            0, 0, {
+                                'image_1920': other_image,
+                                'name': key
+                            }
+                        )
+                    )
+                    presta_template.odoo_id.write(values)
+                else:
+                    presta_template.odoo_id.write({'image_1920': image_content})
+
             super(ProductImageImporter, self).run(image_id, **kwargs)
         except PrestaShopWebServiceError as error:
             binder = self.binder_for('prestashop.product.template')
