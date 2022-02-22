@@ -73,14 +73,16 @@ class ProductImageImporter(Component):
         return adapter.read(self.template_id, self.image_id)
 
     def run(self, template_id, image_id, **kwargs):
+        presta_product_template_model = self.env['prestashop.product.template']
         product_template_model = self.env['product.template']
         self.template_id = template_id
         self.image_id = image_id
         try:
             image_data = self._get_prestashop_data()
             image_content = image_data['content']
-            template = product_template_model.search([('prestashop_id', '=', int(template_id))])
-            if template:
+            presta_template = presta_product_template_model.search([('prestashop_id', '=', int(template_id))])
+            if presta_template and presta_template.odoo_id:
+                template = product_template_model.browse(presta_template.odoo_id)
                 template.write({'image_1920': image_content})
             super(ProductImageImporter, self).run(image_id, **kwargs)
         except PrestaShopWebServiceError as error:
