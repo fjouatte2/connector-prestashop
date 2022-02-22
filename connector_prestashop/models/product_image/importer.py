@@ -73,28 +73,33 @@ class ProductImageImporter(Component):
         return adapter.read(self.template_id, self.image_id)
 
     def run(self, template_id, image_id, **kwargs):
+        add_new_image = True
         presta_product_template_model = self.env['prestashop.product.template']
         product_template_model = self.env['product.template']
         self.template_id = template_id
         self.image_id = image_id
         try:
-            import pdb
-            pdb.set_trace()
             image_data = self._get_prestashop_data()
-            image_content = image_data['content']
+            image_content, image_id = image_data['content'], image_data['id_image']
+            image_name = f'image_{image_id}'
             presta_template = presta_product_template_model.search([('prestashop_id', '=', int(template_id))])
             if presta_template and presta_template.odoo_id:
                 if kwargs and kwargs.get('extra_image', False):
                     values = {}
-                    values['product_template_image_ids'].append(
-                        (
-                            0, 0, {
-                                'image_1920': other_image,
-                                'name': key
-                            }
+                    for extra_image in presta_template.odoo_id.product_template_image_ids:
+                        if extra_image.name == image_name:
+                            add_new_image = False
+                            break
+                    if add_new_image:
+                        values['product_template_image_ids'].append(
+                            (
+                                0, 0, {
+                                    'image_1920': image_content,
+                                    'name': image_name
+                                }
+                            )
                         )
-                    )
-                    presta_template.odoo_id.write(values)
+                        presta_template.odoo_id.write(values)
                 else:
                     presta_template.odoo_id.write({'image_1920': image_content})
 
