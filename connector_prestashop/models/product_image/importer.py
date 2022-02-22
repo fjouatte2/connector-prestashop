@@ -105,7 +105,7 @@ class ProductImageImporter(Component):
                 else:
                     presta_template.odoo_id.write({'image_1920': image_content})
 
-            super(ProductImageImporter, self).run(image_id, **kwargs)
+            # super(ProductImageImporter, self).run(image_id, **kwargs)
         except PrestaShopWebServiceError as error:
             binder = self.binder_for('prestashop.product.template')
             template = binder.to_internal(template_id, unwrap=True)
