@@ -609,6 +609,8 @@ class ProductTemplateImporter(Component):
                 self._delay_product_image_variant([first_exec] + combinations)
 
     def import_images(self, binding):
+        import pdb
+        pdb.set_trace()
         first_image = True
         prestashop_record = self._get_prestashop_data()
         associations = prestashop_record.get('associations', {})
