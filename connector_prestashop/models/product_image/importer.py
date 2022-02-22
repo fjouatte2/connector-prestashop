@@ -79,6 +79,8 @@ class ProductImageImporter(Component):
         self.template_id = template_id
         self.image_id = image_id
         try:
+            import pdb
+            pdb.set_trace()
             image_data = self._get_prestashop_data()
             image_content, image_id = image_data['content'], image_data['id_image']
             image_name = f'image_{image_id}'
