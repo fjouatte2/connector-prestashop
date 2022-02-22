@@ -75,7 +75,8 @@ class ProductImageImporter(Component):
     def run(self, template_id, image_id, **kwargs):
         self.template_id = template_id
         self.image_id = image_id
-
+        import pdb
+        pdb.set_trace()
         try:
             super(ProductImageImporter, self).run(image_id, **kwargs)
         except PrestaShopWebServiceError as error:
