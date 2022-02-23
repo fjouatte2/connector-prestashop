@@ -94,7 +94,7 @@ class ProductImageImporter(Component):
                         if not values.get('product_template_image_ids', False):
                             values['product_template_image_ids'] = []
                         values['product_template_image_ids'].append(
-
+                            (
                                 0, 0, {
                                     'image_1920': image_content,
                                     'name': image_name
