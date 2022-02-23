@@ -32,9 +32,9 @@ class PaymentModeBatchImporter(Component):
         journals = self.env['account.journal'].search(
             [('type', '=', 'bank'),
              ('company_id', '=', self.backend_record.company_id.id),
-             ],
+             ], limit=1
         )
-        if len(journals) != 1:
+        if not journals:
             return
         mode = self.model.create({
             'name': record['payment'],
