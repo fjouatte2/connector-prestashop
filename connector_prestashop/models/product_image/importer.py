@@ -83,8 +83,6 @@ class ProductImageImporter(Component):
             image_content, image_id = image_data['content'], image_data['id_image']
             image_name = f'image_{image_id}'
             presta_template = presta_product_template_model.search([('prestashop_id', '=', int(template_id))])
-            import pdb
-            pdb.set_trace()
             if presta_template and presta_template.odoo_id:
                 if kwargs and kwargs.get('extra_image', False):
                     values = {}
@@ -93,8 +91,10 @@ class ProductImageImporter(Component):
                             add_new_image = False
                             break
                     if add_new_image:
+                        if not values.get('product_template_image_ids', False):
+                            values['product_template_image_ids'] = []
                         values['product_template_image_ids'].append(
-                            (
+
                                 0, 0, {
                                     'image_1920': image_content,
                                     'name': image_name
