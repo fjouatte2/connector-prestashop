@@ -68,6 +68,8 @@ class PrestashopSaleOrder(models.Model):
     @job(default_channel='root.prestashop')
     def import_orders_since(self, backend, since_date=None, **kwargs):
         """ Prepare the import of orders modified on PrestaShop """
+        import pdb
+        pdb.set_trace()
         filters = None
         if since_date:
             filters = {'date': '1', 'filter[date_upd]': '>[%s]' % (since_date)}
