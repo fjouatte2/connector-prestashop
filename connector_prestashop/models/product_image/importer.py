@@ -79,12 +79,12 @@ class ProductImageImporter(Component):
         self.template_id = template_id
         self.image_id = image_id
         try:
-            import pdb
-            pdb.set_trace()
             image_data = self._get_prestashop_data()
             image_content, image_id = image_data['content'], image_data['id_image']
             image_name = f'image_{image_id}'
             presta_template = presta_product_template_model.search([('prestashop_id', '=', int(template_id))])
+            import pdb
+            pdb.set_trace()
             if presta_template and presta_template.odoo_id:
                 if kwargs and kwargs.get('extra_image', False):
                     values = {}

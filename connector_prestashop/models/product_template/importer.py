@@ -616,8 +616,6 @@ class ProductTemplateImporter(Component):
             self.backend_record.get_version_ps_key('image'), {})
         if not isinstance(images, list):
             images = [images]
-        import pdb
-        pdb.set_trace()
         for image in images:
             if image.get('id'):
                 image_count += 1
