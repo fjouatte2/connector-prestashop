@@ -38,7 +38,7 @@ class PrestashopProductImage(models.Model):
         """Import a product image"""
         with backend.work_on(self._name) as work:
             importer = work.component(usage='record.importer')
-            return importer.run(product_tmpl_id, image_id)
+            return importer.run(product_tmpl_id, image_id, **kwargs)
 
 
 class ProductImageAdapter(Component):
