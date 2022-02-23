@@ -78,7 +78,7 @@ class PrestashopSaleOrder(models.Model):
             backend, filters=filters, priority=5, max_retries=0)
         if since_date:
             filters = {'date': '1', 'filter[date_add]': '>[%s]' % since_date}
-        self.env['prestashop.mail.message'].import_batch(backend, filters)
+        # self.env['prestashop.mail.message'].import_batch(backend, filters)
 
         backend.import_orders_since = now_fmt
         return True
