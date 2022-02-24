@@ -259,8 +259,10 @@ class PrestashopImporter(AbstractComponent):
             self.prestashop_record = self._get_prestashop_data()
 
         binding = self._get_binding()
+        """
         if not binding:
-            # self._check_in_new_connector_env()
+            self._check_in_new_connector_env()
+        """
 
         skip = self._has_to_skip()
         if skip:
