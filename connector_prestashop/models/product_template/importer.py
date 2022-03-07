@@ -612,6 +612,8 @@ class ProductTemplateImporter(Component):
         image_count = 0
         prestashop_record = self._get_prestashop_data()
         associations = prestashop_record.get('associations', {})
+        import pdb
+        pdb.set_trace()
         images = associations.get('images', {}).get(
             self.backend_record.get_version_ps_key('image'), {})
         if not isinstance(images, list):
@@ -684,6 +686,8 @@ class ProductTemplateImporter(Component):
     def _import_categories(self):
         record = self.prestashop_record
         associations = record.get('associations', {})
+        import pdb
+        pdb.set_trace()
         categories = associations.get('categories', {}).get(
             self.backend_record.get_version_ps_key('category'), [])
         if not isinstance(categories, list):
