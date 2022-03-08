@@ -131,8 +131,6 @@ class PrestashopImporter(AbstractComponent):
         """ Create the OpenERP record """
         # special check on data before import
         self._validate_data(data)
-        import pdb
-        pdb.set_trace()
         binding = self.model.with_context(
             **self._create_context()
         ).create(data)
