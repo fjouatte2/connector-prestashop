@@ -230,8 +230,6 @@ class TemplateMapper(Component):
 
     @mapping
     def descriptions(self, record):
-        import pdb
-        pdb.set_trace()
         return {
             'description': self.clear_html_field(
                 record.get('description_short', '')),
