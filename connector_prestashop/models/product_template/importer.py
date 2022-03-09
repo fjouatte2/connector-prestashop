@@ -51,8 +51,6 @@ class TemplateMapper(Component):
         ('reference', 'reference'),
         ('available_for_order', 'available_for_order'),
         ('on_sale', 'on_sale'),
-        ('description_html', 'description_html'),
-        ('description_short_html', 'description_short_html'),
         ('description', 'website_description'),
     ]
 
@@ -232,6 +230,8 @@ class TemplateMapper(Component):
 
     @mapping
     def descriptions(self, record):
+        import pdb
+        pdb.set_trace()
         return {
             'description': self.clear_html_field(
                 record.get('description_short', '')),

@@ -76,6 +76,7 @@ class PrestashopProductTemplate(models.Model):
         string='Computed Quantity',
         help="Last computed quantity to send to PrestaShop."
     )
+    """
     description_html = fields.Html(
         string='Description',
         translate=True,
@@ -85,6 +86,7 @@ class PrestashopProductTemplate(models.Model):
         string='Short Description',
         translate=True,
     )
+    """
     date_add = fields.Datetime(
         string='Created at (in PrestaShop)',
         readonly=True
